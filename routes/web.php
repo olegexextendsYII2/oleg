@@ -13,8 +13,14 @@
 
 //Route::get('/', function () {
 	
-//}); q
+//});
+use App\Task;
 
-Route::get('/', 'ControllerTask@task');
+Route::get('/', 'TasksController@index');
+Route::get('/create', 'TasksController@create');
+Route::post('/store', 'TasksController@store');
+Route::get('/{id}/edit', 'TasksController@edit');
+Route::put('/{id}/update', 'TasksController@update');
 //Route::get('name', "ControllerTask@myName");
-	
+
+

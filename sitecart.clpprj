@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="C:\OpenServer\domains\Sitecart\sitecart.clpprj">
 	<settings><PM_URL><![CDATA[]]></PM_URL><PM_HOME_URL><![CDATA[]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";C:\OpenServer\domains\Sitecart\app\Http\Controllers\controller@task.php;C:\OpenServer\domains\Sitecart\storage\framework\views\38303a59ca06e78547b079693ed36e1b1dfeb5c9.php;C:\OpenServer\domains\Sitecart\storage\framework\views\6c25cb8c2ff5608f45d549ccd163a0d637e42128.php;"/><added value=""/><lastopfiles>
-		<file name="C:\OpenServer\domains\Sitecart\resources\views\main.blade.php"/>
 		<file name="C:\OpenServer\domains\Sitecart\app\Http\Controllers\ControllerTask.php"/>
 		<file name="C:\OpenServer\domains\Sitecart\resources\views\task.blade.php"/>
 		<file name="C:\OpenServer\domains\Sitecart\resources\views\name.blade.php"/>
 		<file name="C:\OpenServer\domains\Sitecart\routes\web.php"/>
+		<file name="C:\OpenServer\domains\Sitecart\app\Task.php"/>
+		<file name="C:\OpenServer\domains\Sitecart\database\migrations\2017_08_11_170121_create_tasks_table.php"/>
+		<file name="C:\OpenServer\domains\Sitecart\database\migrations\2017_08_06_180619_create_sitecart_table.php"/>
 	</lastopfiles>
 	<todoblock>
 		<todofile name="C:\OpenServer\domains\Sitecart\vendor\fzaninotto\faker\src\Faker\ORM\CakePHP\EntityPopulator.php">
@@ -5006,25 +5008,25 @@
 		<file name="C:\OpenServer\domains\Sitecart\vendor\doctrine\inflector\.travis.yml" crc="1501961131"/>
 		<file name="C:\OpenServer\domains\Sitecart\vendor\dnoegel\php-xdg-base-dir\tests\XdgTest.php" crc="1501961141"/>
 		<file name="C:\OpenServer\domains\Sitecart\vendor\dnoegel\php-xdg-base-dir\src\Xdg.php" crc="1501961141"/>
-		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\ClassLoader.php" crc="1502042797"/>
-		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_static.php" crc="1502042797"/>
-		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_real.php" crc="1502042797"/>
-		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_psr4.php" crc="1502042797"/>
-		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_namespaces.php" crc="1502042797"/>
-		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_files.php" crc="1502042797"/>
-		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_classmap.php" crc="1502042797"/>
-		<file name="C:\OpenServer\domains\Sitecart\vendor\autoload.php" crc="1502042797"/>
+		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\ClassLoader.php" crc="1502470906"/>
+		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_static.php" crc="1502470906"/>
+		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_real.php" crc="1502470906"/>
+		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_psr4.php" crc="1502470906"/>
+		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_namespaces.php" crc="1502470906"/>
+		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_files.php" crc="1502470906"/>
+		<file name="C:\OpenServer\domains\Sitecart\vendor\composer\autoload_classmap.php" crc="1502470906"/>
+		<file name="C:\OpenServer\domains\Sitecart\vendor\autoload.php" crc="1502470906"/>
 		<file name="C:\OpenServer\domains\Sitecart\tests\Unit\ExampleTest.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\tests\Feature\ExampleTest.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\tests\TestCase.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\tests\CreatesApplication.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\storage\framework\views\f7fc6692361aefd77bcb1b5b81d3608a601bbd9d.php" crc="1502300450"/>
 		<file name="C:\OpenServer\domains\Sitecart\storage\framework\views\27b8ea658c46b547b8270c8512136a5cf7cf47c3.php" crc="1502299486"/>
-		<file name="C:\OpenServer\domains\Sitecart\routes\web.php" crc="1502390795"/>
+		<file name="C:\OpenServer\domains\Sitecart\routes\web.php" crc="1502471132"/>
 		<file name="C:\OpenServer\domains\Sitecart\routes\console.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\routes\channels.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\routes\api.php" crc="1501961065"/>
-		<file name="C:\OpenServer\domains\Sitecart\resources\views\task.blade.php" crc="1502299525"/>
+		<file name="C:\OpenServer\domains\Sitecart\resources\views\task.blade.php" crc="1502471128"/>
 		<file name="C:\OpenServer\domains\Sitecart\resources\views\name.blade.php" crc="1502390267"/>
 		<file name="C:\OpenServer\domains\Sitecart\resources\views\main.blade.php" crc="1502389834"/>
 		<file name="C:\OpenServer\domains\Sitecart\resources\lang\en\validation.php" crc="1501961065"/>
@@ -5041,6 +5043,7 @@
 		<file name="C:\OpenServer\domains\Sitecart\public\index.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\public\.htaccess" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\database\seeds\DatabaseSeeder.php" crc="1501961065"/>
+		<file name="C:\OpenServer\domains\Sitecart\database\migrations\2017_08_11_170121_create_tasks_table.php" crc="1502471028"/>
 		<file name="C:\OpenServer\domains\Sitecart\database\migrations\2017_08_06_180619_create_sitecart_table.php" crc="1502076847"/>
 		<file name="C:\OpenServer\domains\Sitecart\database\migrations\2014_10_12_100000_create_password_resets_table.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\database\migrations\2014_10_12_000000_create_users_table.php" crc="1501961065"/>
@@ -5072,12 +5075,13 @@
 		<file name="C:\OpenServer\domains\Sitecart\app\Http\Controllers\Auth\RegisterController.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\app\Http\Controllers\Auth\LoginController.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\app\Http\Controllers\Auth\ForgotPasswordController.php" crc="1501961065"/>
-		<file name="C:\OpenServer\domains\Sitecart\app\Http\Controllers\ControllerTask.php" crc="1502389964"/>
+		<file name="C:\OpenServer\domains\Sitecart\app\Http\Controllers\ControllerTask.php" crc="1502471122"/>
 		<file name="C:\OpenServer\domains\Sitecart\app\Http\Controllers\Controller.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\app\Http\Kernel.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\app\Exceptions\Handler.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\app\Console\Kernel.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\app\User.php" crc="1501961065"/>
+		<file name="C:\OpenServer\domains\Sitecart\app\Task.php" crc="1502471133"/>
 		<file name="C:\OpenServer\domains\Sitecart\webpack.mix.js" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\server.php" crc="1501961065"/>
 		<file name="C:\OpenServer\domains\Sitecart\phpunit.xml" crc="1501961065"/>
