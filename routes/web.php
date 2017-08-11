@@ -13,7 +13,7 @@
 
 //Route::get('/', function () {
 	
-//});
+//}); q
 
 Route::get('/', 'ControllerTask@task');
 //Route::get('name', "ControllerTask@myName");
