@@ -26,7 +26,11 @@ class PortfolioController extends Controller
   public function store(Request  $request)
    {
    		  
-      
+        $this->validate($request, [
+    'title' => 'required',
+    'content' => 'required',
+    
+]);
         $portfolio =  Portfolio::add($request->only(['title','content','categori_id']));
         
        	$portfolio->uploadImage($request->file('image'));
