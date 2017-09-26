@@ -1,0 +1,37 @@
+public function store(CreateTaskRequest $request)
+    {
+     $task = Task::create($request->all());
+
+        if($request->hasFile('image'))
+        {
+            $task->uploadImage($request->file('image'));
+        }
+
+     return redirect()->route('tasks.index');
+    }
+public function uploadImage($image)
+    {
+     $filename = str_random(10) . '.' . $image->extension(); //генерим название
+     $image->storeAs('uploads', $filename); //сохраняем в папку uploads, под названием которое хранится в перемнной $filename
+     $this->image = $filename; //обновляем атрибут image
+     $this->save(); //сохраняем
+     //все это для сохранения Картинки
+    }
+{!! Form::open(['route' => 'tasks.store','files'=>true]) !!}
+    <div class="form-group">
+     <input type="text" class="form-control" name="title" value="">
+     <br>
+     <textarea name="description" class="form-control"></textarea>
+     <br>
+     <input type="file" name="image" class="form-control">
+     <br>
+
+     <button class="btn btn-success">Submit</button>
+    </div>
+   {!! Form::close() !!}
+заходишь в папку config/filesystems
+и заменяешь на это
+'local' => [
+            'driver' => 'local',
+            'root' => public_path(),
+        ],

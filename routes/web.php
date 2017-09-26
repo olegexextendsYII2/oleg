@@ -1,26 +1,14 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-//Route::get('/', function () {
-	
-//});
-use App\Task;
+Route::get('/', 'PortfolioController@index')->name('index');
+Route::get('/create', 'PortfolioController@create')->name('create');
+Route::post('/store', 'PortfolioController@store')->name('store');
+Route::get('/{id}/edit' , 'PortfolioController@edit')->name('edit');
+Route::post('/{portfolio}/update', 'PortfolioController@update')->name('update');
+Route::get('/{id}/crosOut', 'PortfolioController@crosOut')->name('crocOut');
 
-Route::get('/', 'TasksController@index');
-Route::get('/create', 'TasksController@create');
-Route::post('/store', 'TasksController@store');
-Route::get('/{id}/edit', 'TasksController@edit');
-Route::put('/{id}/update', 'TasksController@update');
-//Route::get('name', "ControllerTask@myName");
-
-
+Route::get('/create_categori/index', 'admin\categoriController@indexCategori')->name('indexCategori');
+Route::get('/create_categori/create', 'admin\categoriController@createCategori')->name('createCategori');
+Route::get('/create_categori/{id}/delete', 'admin\categoriController@deleteCategori')->name('deleteCategori');
+Route::post('/create_categori/store', 'admin\categoriController@storeCategori')->name('storeCategori');

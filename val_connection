@@ -1,0 +1,12 @@
+в контроллере $this->validate($request, ['поле' => 'required'] );
+связи belongsTo, hasMany
+
+public function category()
+{
+return $this->belongsTo(Category::class);
+}
+
+public function tasks()
+{
+return $this->hasMany(Task::class);
+}

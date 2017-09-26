@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSitecartTable extends Migration
+class UpdateCategorisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSitecartTable extends Migration
      */
     public function up()
     {
-        Schema::create('sitecart', function (Blueprint $table) {
+        Schema::create('categoris', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateSitecartTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sitecart');
+        Schema::dropIfExists('categoris');
     }
 }

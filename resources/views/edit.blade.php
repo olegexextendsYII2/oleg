@@ -1,12 +1,19 @@
 @extends('main')
 
 @section('task')
-<h2>Редактировать задачу - {{$task->title}}</h2>
-<form action="/{{$task->id}}/update" method="POST">
-	<input type="hidden" value="PUT" name="_method">
-	<input type="text" name="title" value="{{$task->title}}"> <br>
-	<textarea name="content" id="" cols="30" rows="10">{{$task->content}}</textarea>
-	{{csrf_field()}}
-	<button>Изменить</button>
-</form>
+<h2>Редактировать задачу - {{$portfolio->title}}</h2>
+{!! Form::open(['route' => ['update' , $portfolio->id],'files'=>true]) !!}
+    <div class="form-group">
+     <input type="text" class="form-control" name="title" value="{{$portfolio->title}}">
+     <br>
+    <textarea name="content" class="form-control">{{$portfolio->content}}</textarea>
+     <br>
+     <input type="file" name="image" class="form-control">
+     <br>
+
+     <button class="btn btn-success">Submit</button>
+    </div>
+   {!! Form::close() !!}
+   {{csrf_field()}}
 @endsection
+
