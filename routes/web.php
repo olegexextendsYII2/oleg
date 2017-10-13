@@ -1,14 +1,25 @@
 <?php
 
+Route::get('/', 'PortfolioController@index')->name('home.page');
+Route::get('/portfolio', 'PortfolioController@showPortfolio')->name('portfolio');
+Route::get('/about', 'PortfolioController@about')->name('about.page');
+Route::get('/category/{id}', 'PortfolioController@showCategory')->name('show.category');
 
-Route::get('/', 'PortfolioController@index')->name('index');
-Route::get('/create', 'PortfolioController@create')->name('create');
-Route::post('/store', 'PortfolioController@store')->name('store');
-Route::get('/{id}/edit' , 'PortfolioController@edit')->name('edit');
-Route::post('/{portfolio}/update', 'PortfolioController@update')->name('update');
-Route::get('/{id}/crosOut', 'PortfolioController@crosOut')->name('crocOut');
+Route::group([
+	'prefix' => 'admin',
+	'namespace' => 'admin',
+	'middleware' => 'auth'
+		] ,
+		function(){
+			Route::get('/', 'DashboardController@index')->name('home.page.admin');
 
-Route::get('/create_categori/index', 'admin\categoriController@indexCategori')->name('indexCategori');
-Route::get('/create_categori/create', 'admin\categoriController@createCategori')->name('createCategori');
-Route::get('/create_categori/{id}/delete', 'admin\categoriController@deleteCategori')->name('deleteCategori');
-Route::post('/create_categori/store', 'admin\categoriController@storeCategori')->name('storeCategori');
+			Route::resource('/portfolio' , 'PortfolioAdminController');
+			Route::resource('/category' , 'CategoryController');
+
+		});
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

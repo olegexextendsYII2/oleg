@@ -42,7 +42,7 @@ class Portfolio extends Model
     public function edit($fields)
     {
     	
-
+        //dd($fields);
     	$this->fill($fields);
 
     	$this->save();

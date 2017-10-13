@@ -2,64 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Portfolio;
 use App\Categori;
 
 class PortfolioController extends Controller
 {
-   public function index()
-   {
-      	$portfolios = Portfolio::all();
+	public function index()
+	{
+		
+		return view('pages.index_page');
+	}
 
-      	return view('index',['portfolios' => $portfolios]);			
-   }
+	public function showPortfolio()
+	{
+		
+		$portfolios = Portfolio::all();
+		
+		return view('pages.show_portfolio' , ['portfolios' => $portfolios]);
+	}
 
-   public function create()
-   {
-     $categoris = Categori::all();
-       
-   		return view('create',['categoris' => $categoris]);
-   }
+	public function about()
+	{
+		return view('pages.about_me');
+	}
 
-  public function store(Request  $request)
-   {
-   		  
-        $this->validate($request, [
-    'title' => 'required',
-    'content' => 'required',
-    
-]);
-        $portfolio =  Portfolio::add($request->only(['title','content','categori_id']));
-        
-       	$portfolio->uploadImage($request->file('image'));
+	public function showCategory($id)
+	{
 
-      	return redirect()->route('index');
-   }
+		$category = Categori::find($id);
 
-   public function edit($id)
-   {
-   	 	$portfolio = Portfolio::find($id);
+		$portfolios = $category->portfolio;
 
-   		return view('edit' , ['portfolio' =>$portfolio]);
-   }
-
-   public function update(Portfolio $portfolio , Request $request  )
-   {
-   		
-
-   	   	$portfolio->edit($request->only(['title','content']));
-   		
-   		$portfolio->uploadImage($request->file('image'));
-
-		return redirect('/');
-   }
-   
-   public function crosOut($id)
-   {
-   		Portfolio::find($id)->remove();
-   		return redirect()->route('index');
-   }
-   
+		// foreach ($portfolios as $portfolio) {
+		// 	dd($portfolio->portfolio);
+		// }
+		return view('pages.show_category'  , ['portfolios' => $portfolios ]);	
+	}
+    //
 }

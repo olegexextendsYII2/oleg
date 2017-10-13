@@ -19,7 +19,11 @@ class Categori extends Model
 
      public function remove()
     {
-         
+         $portfolios = $this->portfolio;
+    foreach ($portfolios as $portfolio) {
+      $portfolio->remove();
+      # code$...
+    }
    		$this->delete();
    	}
     //
