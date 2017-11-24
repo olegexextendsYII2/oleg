@@ -1,9 +1,9 @@
      
 
 
-    @extends('main')
+    @extends('admin.layout_admin')
 
-	@section('show_category')
+	@section('content')
 
 		<h2>{{$category->name}}</h2>
 		<ul class="nav nav-pills">

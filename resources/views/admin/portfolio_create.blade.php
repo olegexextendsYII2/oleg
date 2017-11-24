@@ -1,6 +1,6 @@
-@extends('main')
+@extends('admin.layout_admin')
 
-@section('portfolio')
+@section('content')
 <h2>портфолио</h2>
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -29,12 +29,20 @@
      <br>
     <textarea name="content" class="form-control"></textarea>
      <br>
+     <br>
+    <textarea name="full_description" class="form-control"></textarea>
+     <br>
      <input type="file" name="image" class="form-control">
      <br>
-     <button class="btn btn-success">добавить</button>
+     <button class="btn btn-success">создать</button>
     </div>
     </div>
-     <li class="active"><a href="{{route('portfolio.index')}}">портфолио</a></li>
+     
+  <ul class="nav nav-pills">
+    <li class="active"><a href="{{route('portfolio.index')}}">портфолио</a></li>
+    
+    <li><a href="{{route('home.page.admin')}}">админка</a></li>   
+   </ul>
    {!! Form::close() !!}
    {{csrf_field()}}
 @endsection

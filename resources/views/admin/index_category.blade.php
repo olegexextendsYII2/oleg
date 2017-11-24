@@ -1,8 +1,8 @@
 
-	@extends('main')
+	@extends('admin.layout_admin')
 
-@section('categorys')
- <div class="table-responsive">
+@section('content')
+ <{{-- div class="table-responsive">
  	 				 @foreach ($categorys as $category)
                             <table class="table table-bordered table-hover">
                               
@@ -30,6 +30,44 @@
     </li>
     <li><a href="{{route('home.page.admin')}}">админка</a></li>   
     </ul>
+ --}}
+
+<table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+           @foreach ($categorys as $category)
+                <tr>
+                    <td>{{$category->id}}</td>
+                    <td>{{$category->name}}</td>
+                    
+                    <td>
+                        
+                        {!! Form::open([
+                            'route' =>  ['category.destroy' , $category->id],
+                            'method'    =>  'DELETE'
+                            ]) 
+                        !!}
+                        <button class="btn btn-danger">Delete</button>
+                        {!! Form::close() !!}
+                    </td>
+                    
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+<ul class="nav nav-pills">
+    <li class="active"><a href="{{route('category.create')}}">Создать категорию</a>
+    </li>
+    <li><a href="{{route('home.page.admin')}}">админка</a></li>   
+</ul>
     
 
 <br>

@@ -1,11 +1,11 @@
 
 @extends('main')
 
-	@section('show_category_portfolio')
+	@section('content')
 
 	
 	<div class="container">
-		<h3 class="tittle-one">Мои работы</h3> 
+		<h3 class="tittle-one">Мои работы {{$category->name}}</h3> 
 			
 			<script src={{asset('asset/js/jquery.swipebox.min.js')}}></script> 
 			<script type="text/javascript">
@@ -16,15 +16,14 @@
 
 			@foreach($portfolios as $portfolio)
 
-				<div class="view view-seventh">
+				{{-- <div class="view view-seventh">
                     <a href="/uploads/{{$portfolio->image}}" class="b-link-stripe b-animate-go  swipebox"  title="Image Title"><img src="/uploads/{{$portfolio->image}}" alt="" class="img-responsive">
-                    <div class="mask">
+                    <div class="mask"> --}}
                        <h4>{{$portfolio->title}}</h4>
                         <p>{{$portfolio->content }}</p>
-                         <ul class="nav nav-pills">
-   
-     	
-                  </ul>
+                        <ul class="nav nav-pills">
+    						<li class="active"><a href="{{route('show.description' , ['id' => $portfolio->id])}}">{{$portfolio->title}}</a></li>
+    					</ul>
                         
                     </div></a>
                 

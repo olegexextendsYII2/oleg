@@ -1,7 +1,7 @@
 
-@extends('main')
+@extends('admin.layout_admin')
 
-	@section('show_portfolio')
+	@section('content')
 
 		 <table class="table table-bordered table-hover">
                               

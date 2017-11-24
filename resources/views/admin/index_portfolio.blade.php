@@ -1,8 +1,8 @@
 
-@extends('main')
+@extends('admin.layout_admin')
 
-@section('portfolio')
- <div class="table-responsive">
+@section('content')
+ {{-- <div class="table-responsive">
  	 				@foreach ($portfolios as $portfolio)
                             <table class="table table-bordered table-hover">
                               
@@ -29,7 +29,48 @@
     <li class="active"><a href="{{route('portfolio.create')}}">Создать_портфолио</a>
     </li>
     <li><a href="{{route('home.page.admin')}}">админка</a></li>   
-    </ul>
+     </ul>--}}
+
+<br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Actions</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach ($portfolios as $portfolio)
+                <tr>
+                    <td>{{$portfolio->id}}</td>
+                    <td>{{$portfolio->title}}</td>
+                    <td>{{$portfolio->categori->name}}</td>
+                    <td><p>{{$portfolio->content}}</p></td>
+                    <td>
+                        <a href="{{route('portfolio.edit' , $portfolio->id )}}" class="btn btn-danger">Edit</a>
+                        {!! Form::open([
+                            'route' =>  ['portfolio.destroy' , $portfolio->id],
+                            'method'    =>  'DELETE'
+                            ]) 
+                        !!}
+                        <button class="btn btn-danger">Delete</button>
+                        {!! Form::close() !!}
+                    </td>
+                    <td><img src = "/uploads/{{$portfolio->image}}" width="50" /></td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+ <ul class="nav nav-pills">
+    <li class="active"><a href="{{route('portfolio.create')}}">Создать_портфолио</a>
+    </li>
+    <li><a href="{{route('home.page.admin')}}">админка</a></li>   
+</ul> 
 
 <br>
 

@@ -34,10 +34,32 @@ class PortfolioController extends Controller
 
 		$portfolios = $category->portfolio;
 
-		// foreach ($portfolios as $portfolio) {
-		// 	dd($portfolio->portfolio);
-		// }
-		return view('pages.show_category'  , ['portfolios' => $portfolios ]);	
+		
+		return view('pages.show_category'  , ['portfolios' => $portfolios,
+												'category' => $category ]);	
 	}
+
+	public function showDescription($id)
+	{
+		
+		$portfolio = Portfolio::find($id);
+
+		return view('pages.show_full_description' , ['portfolio' => $portfolio]);
+
+	}
+
+
+	public function contact()
+	{
+		
+		
+
+		return view('pages.contact');
+
+	}
+
+	
+
+
     //
 }

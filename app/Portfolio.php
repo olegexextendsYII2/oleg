@@ -10,13 +10,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Portfolio extends Model
 {
-	protected $fillable = ['title','content','image','categori_id'];
+	protected $fillable = ['title','content','image','categori_id', 'full_description'];
 
 
 	public function uploadImage( $image )
     {
-        //$ima = $this->image;
-    	//dd($ima);
+       
+    	
 
     	if($image == null) { return ; }
             if($this->image !== null)
@@ -42,7 +42,7 @@ class Portfolio extends Model
     public function edit($fields)
     {
     	
-        //dd($fields);
+        
     	$this->fill($fields);
 
     	$this->save();
@@ -57,11 +57,11 @@ class Portfolio extends Model
 
         
         
-    	$portfolio->fill($filds);
+    	  $portfolio->fill($filds);
 
-    	$portfolio->save();
+    	  $portfolio->save();
 
-    	return $portfolio;
+    	  return $portfolio;
     }
 
     public function remove()
@@ -71,13 +71,13 @@ class Portfolio extends Model
             Storage::delete('uploads/' . $this->image);
            }
 
-   		$this->delete();
+   		  $this->delete();
    	
     }
 
     public function categori()
     {
-        return $this->belongsTo('App\Categori');
+          return $this->belongsTo('App\Categori');
     }
     //
 }

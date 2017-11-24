@@ -1,12 +1,15 @@
-@extends('main')
+@extends('admin.layout_admin')
 
 
 
-@section('categorys_create')
+@section('content')
+<h1>Создать категорию</h1>
+<br>
+<br>
 <div class="container">
 
 {!! Form::open(['route' => 'category.store']) !!}
-	 <divclass="form-control">{!!Form::text('name')!!}</div>  
+	 <input type="text" class="form-control" name="name" value=""> 
      <br>
 	<ul class="nav nav-pills">
 	  <div class="btn ">{!!Form::submit('создать категорию');!!}</div>
